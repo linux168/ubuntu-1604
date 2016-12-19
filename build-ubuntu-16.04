@@ -1,0 +1,10 @@
+#!/bin/bash
+
+export ARCH="amd64"
+export BASE_ELEMENTS="dib-python install-bin dib-run-parts manifests cache-url pkg-map ubuntu cloud-init-datasources package-installs dpkg dkms ubuntu-16.04-image"
+export DIB_CLOUD_INIT_DATASOURCES="ConfigDrive, Ec2"
+export DIB_RELEASE="xenial"
+export ELEMENTS_PATH="/root/disk-image-build/elements:/usr/local/share/diskimage-builder/elements"
+export IMAGE_PATH="/opt/images/ubuntu-16.04"
+
+disk-image-create vm $BASE_ELEMENTS -t raw -o $IMAGE_PATH
